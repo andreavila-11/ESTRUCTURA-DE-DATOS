@@ -1,4 +1,4 @@
-class ArbolABB:
+class ArbolB:
     class Nodo:
         def __init__(self, valor):
             self.valor = valor
@@ -60,7 +60,7 @@ class ArbolABB:
         print(nodo.valor, end=" ")
 
 # --- EJEMPLO ---
-arbol = ArbolABB()
+arbol = ArbolB()
 datos = [3, 1, 4, 2, 5]
 for d in datos:
     arbol.agregar(d)
