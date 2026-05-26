@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto Final - Estructura de Datos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    display:flex;
+    background:#0f172a;
+    color:white;
+    height:100vh;
+    overflow:hidden;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:300px;
+    background:linear-gradient(180deg,#111827,#1e293b);
+    padding:20px;
+    overflow-y:auto;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:30px;
+    color:#38bdf8;
+}
+
+.section-title{
+    margin-top:20px;
+    margin-bottom:10px;
+    color:#94a3b8;
+    font-size:14px;
+    text-transform:uppercase;
+}
+
+.menu-btn{
+    width:100%;
+    padding:14px;
+    margin-bottom:10px;
+
+    background:#1e293b;
+    border:none;
+    border-radius:10px;
+
+    color:white;
+    cursor:pointer;
+
+    transition:0.3s;
+    text-align:left;
+}
+
+.menu-btn:hover{
+    background:#2563eb;
+    transform:translateX(5px);
+}
+
+.menu-btn:hover{
+    background:#2563eb;
+    transform:translateX(5px);
+}
+
+/* CONTENT */
+
+.content{
+    flex:1;
+    padding:30px;
+    overflow-y:auto;
+}
+
+.hero{
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    padding:30px;
+    border-radius:25px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.card{
+    background:#111827;
+    padding:25px;
+    border-radius:25px;
+    margin-bottom:25px;
+    border:1px solid #1e293b;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.preview{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+    border:1px solid #334155;
+}
+
+.code-box{
+    background:#020617;
+    padding:20px;
+    border-radius:15px;
+    overflow:auto;
+    color:#22c55e;
+}
+
+pre{
+    white-space:pre-wrap;
+}
+
+.tag{
+    display:inline-block;
+    background:#2563eb;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.footer{
+    margin-top:30px;
+    text-align:center;
+    color:#94a3b8;
+}
+
+@media(max-width:900px){
+
+    body{
+        flex-direction:column;
+        overflow:auto;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        Estructura de Datos
+    </div>
+
+    <!-- PRACTICA 1 -->
+
+<div class="section-title">Práctica 1</div>
+
+<button class="menu-btn" onclick="showExercise('abcArreglo')">
+    ABC Arreglo
+</button>
+
+<button class="menu-btn" onclick="showExercise('abcSinArreglo')">
+    ABC Sin Arreglo
+</button>
+
+<button class="menu-btn" onclick="showExercise('calificaciones')">
+    Calificaciones
+</button>
+
+<button class="menu-btn" onclick="showExercise('cosecha')">
+    Cosecha
+</button>
+
+<button class="menu-btn" onclick="showExercise('repetidos')">
+    Elementos Repetidos
+</button>
+
+
+<!-- PRACTICA 2 -->
+
+<div class="section-title">Práctica 2</div>
+
+<button class="menu-btn" onclick="showExercise('coordenadas')">
+    Coordenadas Matriz
+</button>
+
+<button class="menu-btn" onclick="showExercise('dataframe')">
+    DataFrame
+</button>
+
+<button class="menu-btn" onclick="showExercise('matrices')">
+    Matrices
+</button>
+
+<button class="menu-btn" onclick="showExercise('asientos')">
+    Matriz Asientos
+</button>
+
+
+<!-- PRACTICA 3 -->
+
+<div class="section-title">Práctica 3</div>
+
+<button class="menu-btn" onclick="showExercise('bicolas')">
+    Bicolas
+</button>
+
+<button class="menu-btn" onclick="showExercise('colasCirculares')">
+    Colas Circulares
+</button>
+
+<button class="menu-btn" onclick="showExercise('colas')">
+    Colas
+</button>
+
+<button class="menu-btn" onclick="showExercise('deque')">
+    Deque
+</button>
+
+<button class="menu-btn" onclick="showExercise('ejercicioColas')">
+    Ejercicio Colas
+</button>
+
+<button class="menu-btn" onclick="showExercise('simulacion')">
+    Simulación Datos
+</button>
+
+
+<!-- PRACTICA 4 -->
+
+<div class="section-title">Práctica 4</div>
+
+<button class="menu-btn" onclick="showExercise('colaCircular')">
+    Cola Circular
+</button>
+
+
+<!-- PRACTICA 5 -->
+
+<div class="section-title">Práctica 5</div>
+
+<button class="menu-btn" onclick="showExercise('pila')">
+    Pila
+</button>
+
+
+<!-- PRACTICA 6 -->
+
+<div class="section-title">Práctica 6</div>
+
+<button class="menu-btn" onclick="showExercise('arboles')">
+    Árboles
+</button>
+
+<button class="menu-btn" onclick="showExercise('arbolBinario')">
+    Árboles Binarios
+</button>
+
+<button class="menu-btn" onclick="showExercise('raiz')">
+    Raíz
+</button>
+
+
+<!-- PRACTICA 7 -->
+
+<div class="section-title">Práctica 7</div>
+
+<button class="menu-btn" onclick="showExercise('grafo')">
+    Grafo
+</button>
+
+<button class="menu-btn" onclick="showExercise('grafo2')">
+    Grafo 2
+</button>
+
+<button class="menu-btn" onclick="showExercise('prims')">
+    Prims
+</button>
+
+<button class="menu-btn" onclick="showExercise('hanoi')">
+    Torres de Hanoi
+</button>
+
+<div class="section-title">Métodos de Ordenamiento</div>
+
+<button class="menu-btn" onclick="showExercise('sort')">
+    Sort
+</button>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="content" id="content">
+
+    <div class="hero">
+        <h1>PRACTICAS SEMESTRE 4</h1>
+        <p>
+            Proyecto Final de Estructura de Datos
+        </p>
+    </div>
+
+    <div class="card">
+
+        <div class="tag">
+            Bienvenido
+        </div>
+
+        <h2>
+            Selecciona un ejercicio
+        </h2>
+
+        <p>
+            En el menú izquierdo podrás visualizar todos los ejercicios
+            realizados durante el semestre.
+        </p>
+
+    </div>
+
+    <div class="footer">
+        Proyecto Final - 2026
+    </div>
+
+</div>
+
+<script>
+
+const exercises = {
+
+abcArreglo:{
+title:'ABC Arreglo',
+description:'Programa que recorre una cadena de texto utilizando arreglos para contar cuántas veces aparece cada letra del abecedario.',
+preview:'Conteo automático de letras minúsculas y mayúsculas dentro de una palabra.',
+code:`cadena = "Parangaricutirimicuaro"
+
+abecedario_min = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+abecedario_may = [letra.upper() for letra in abecedario_min]
+
+print("Letras minúsculas:")
+for letra in abecedario_min:
+    if cadena.find(letra) != -1:
+        print (letra, ":", cadena.count(letra))
+
+print("\nLetras mayúsculas:")
+for letra in abecedario_may:
+    if cadena.find(letra) != -1:
+        print (letra, ":", cadena.count(letra))`
+},
+
+abcSinArreglo:{
+title:'ABC Sin Arreglo',
+description:'Programa que cuenta manualmente las letras de una cadena sin utilizar arreglos.',
+preview:'Validación individual de letras usando instrucciones repetitivas.',
+code:`cadena = "Parangaricutirimicuaro"
+
+print("Letras minúsculas:")
+if cadena.count('a') > 0: print('a :', cadena.count('a'))
+if cadena.count('b') > 0: print('b :', cadena.count('b'))
+if cadena.count('c') > 0: print('c :', cadena.count('c'))
+if cadena.count('d') > 0: print('d :', cadena.count('d'))
+if cadena.count('e') > 0: print('e :', cadena.count('e'))
+if cadena.count('f') > 0: print('f :', cadena.count('f'))
+if cadena.count('g') > 0: print('g :', cadena.count('g'))
+if cadena.count('h') > 0: print('h :', cadena.count('h'))
+if cadena.count('i') > 0: print('i :', cadena.count('i'))
+if cadena.count('j') > 0: print('j :', cadena.count('j'))
+if cadena.count('k') > 0: print('k :', cadena.count('k'))
+if cadena.count('l') > 0: print('l :', cadena.count('l'))
+if cadena.count('m') > 0: print('m :', cadena.count('m'))
+if cadena.count('n') > 0: print('n :', cadena.count('n'))
+if cadena.count('o') > 0: print('o :', cadena.count('o'))
+if cadena.count('p') > 0: print('p :', cadena.count('p'))
+if cadena.count('q') > 0: print('q :', cadena.count('q'))
+if cadena.count('r') > 0: print('r :', cadena.count('r'))
+if cadena.count('s') > 0: print('s :', cadena.count('s'))
+if cadena.count('t') > 0: print('t :', cadena.count('t'))
+if cadena.count('u') > 0: print('u :', cadena.count('u'))
+if cadena.count('v') > 0: print('v :', cadena.count('v'))
+if cadena.count('w') > 0: print('w :', cadena.count('w'))
+if cadena.count('x') > 0: print('x :', cadena.count('x'))
+if cadena.count('y') > 0: print('y :', cadena.count('y'))
+if cadena.count('z') > 0: print('z :', cadena.count('z'))
+
+print("\nLetras mayúsculas:")
+if cadena.count('A') > 0: print('A :', cadena.count('A'))
+if cadena.count('B') > 0: print('B :', cadena.count('B'))
+if cadena.count('C') > 0: print('C :', cadena.count('C'))
+if cadena.count('D') > 0: print('D :', cadena.count('D'))
+if cadena.count('E') > 0: print('E :', cadena.count('E'))
+if cadena.count('F') > 0: print('F :', cadena.count('F'))
+if cadena.count('G') > 0: print('G :', cadena.count('G'))
+if cadena.count('H') > 0: print('H :', cadena.count('H'))
+if cadena.count('I') > 0: print('I :', cadena.count('I'))
+if cadena.count('J') > 0: print('J :', cadena.count('J'))
+if cadena.count('K') > 0: print('K :', cadena.count('K'))
+if cadena.count('L') > 0: print('L :', cadena.count('L'))
+if cadena.count('M') > 0: print('M :', cadena.count('M'))
+if cadena.count('N') > 0: print('N :', cadena.count('N'))
+if cadena.count('O') > 0: print('O :', cadena.count('O'))
+if cadena.count('P') > 0: print('P :', cadena.count('P'))
+if cadena.count('Q') > 0: print('Q :', cadena.count('Q'))
+if cadena.count('R') > 0: print('R :', cadena.count('R'))
+if cadena.count('S') > 0: print('S :', cadena.count('S'))
+if cadena.count('T') > 0: print('T :', cadena.count('T'))
+if cadena.count('U') > 0: print('U :', cadena.count('U'))
+if cadena.count('V') > 0: print('V :', cadena.count('V'))
+if cadena.count('W') > 0: print('W :', cadena.count('W'))
+if cadena.count('X') > 0: print('X :', cadena.count('X'))
+if cadena.count('Y') > 0: print('Y :', cadena.count('Y'))
+if cadena.count('Z') > 0: print('Z :', cadena.count('Z'))`
+},
+
+calificaciones:{
+title:'Calificaciones',
+description:'Sistema que calcula el promedio general de un grupo y determina alumnos aprobados y reprobados.',
+preview:'Cálculo de porcentajes y estadísticas escolares.',
+code:`cal_alumnos = [8, 8, 7, 5, 10, 9, 9, 5, 6, 10]
+
+suma= 0
+n = len(cal_alumnos)
+
+for cal in cal_alumnos:
+    suma=suma+cal
+
+promedio = suma/n
+
+aprobados=0
+reprobados=0
+
+for cal_alumnos in cal_alumnos:
+    if cal >= 7:
+        aprobados +=1
+    else:
+        reprobados +=1
+    
+aprobados_porcentaje = (aprobados / n)*100
+reprobados_porcentaje = (reprobados / n)*100
+
+print ("Promedio del grupo:", promedio)
+print ("Alumnos aprobados:", aprobados)
+print ("Alumnos reprobados:", reprobados)
+print ("Porcentaje aprobados:", aprobados_porcentaje )
+print ("Porcentaje reprobados:", reprobados_porcentaje)`
+},
+
+cosecha:{
+title:'Cosecha',
+description:'Análisis de toneladas cosechadas durante un año para obtener promedios y comparaciones.',
+preview:'Comparación de meses superiores e inferiores al promedio anual.',
+code:`tonelada_cosecha = [12, 24, 16, 15, 20, 18, 6, 10, 12, 11, 15, 12]
+
+
+total = 0
+
+for i in tonelada_cosecha:
+    total = total + i
+
+promedio = total / len(tonelada_cosecha)
+
+mayores = 0
+menores = 0
+
+for i in tonelada_cosecha:
+    if i > promedio:
+        mayores += 1
+    elif i < promedio:
+        menores += 1
+
+print("Promedio anual:", promedio)
+print("Meses superiores al promedio:", mayores)
+print("Meses inferiores al promedio:", menores)`
+},
+
+repetidos:{
+title:'Elementos Repetidos',
+description:'Elimina elementos duplicados dentro de un arreglo utilizando listas auxiliares y recorridos.',
+preview:'Transformación de un arreglo con repetidos a uno limpio y ordenado.',
+code:`x = [1, 2, 4, 4, 4, 5, 7, 9, 11, 11, 13, 14, 15, 16, 16]
+
+y = []
+
+for numero in x:
+    if numero not in y:
+        y.append(numero)
+
+print("Arreglo original x:", x)
+print("Arreglo y sin duplicados:", y)
+print("Tamaño de x:", len(x))
+print("Tamaño de y:", len(y))
+
+x1 = [1, 2, 4, 4, 4, 5, 7, 9, 11, 11, 13, 14, 15, 16, 16]
+for i in range(len(x1)-1, 0, -1):
+    if x1[i] == x1[i-1]:
+        x1.pop(i)
+print("Arreglo x1 sin duplicados:", x1)`
+},
+
+coordenadas:{
+title:'Coordenadas Matriz',
+description:'Búsqueda de valores específicos dentro de una matriz para obtener sus coordenadas.',
+preview:'Localización de números mediante filas y columnas.',
+code:`A = [
+    [4,7,2,9,5,7],
+    [1,3,7,6,8,0],
+    [9,2,5,7,4,6],
+    [8,7,1,3,7,2],
+    [5,0,6,4,2,9],
+    [7,8,9,2,1,7]
+]
+
+listaCoordenadas = []
+
+for i, fila in enumerate(A):
+    for j, valor in enumerate(fila):
+        if valor == 7:
+            listaCoordenadas.append((i+1, j+1))
+
+if listaCoordenadas == []:
+    print("No encontrado")
+else:
+    print(listaCoordenadas)
+    def coordenadas(A, x):
+    listaCoordenadas = []
+
+    for i, fila in enumerate(A):
+        for j, valor in enumerate(fila):
+            if valor == x:
+                listaCoordenadas.append((i+1, j+1))
+
+    if listaCoordenadas == []:
+        print("No encontrado")
+    else:
+        print(listaCoordenadas)
+
+coordenadas(A, 7)`
+},
+
+dataframe:{
+title:'DataFrame',
+description:'Lectura y análisis de datos desde un archivo CSV utilizando la librería pandas.',
+preview:'Cálculo de media, moda, varianza y desviación estándar.',
+code:`import pandas as pd 
+import math
+
+
+#Leer el archivo cvsdelimitados por comas (por defecto)
+df = pd.read_csv("DATA/Housing.csv")
+
+lista = list(df["price"])
+
+print("Media de Los datos") 
+suma = 0
+moda = 0
+varianza = 0
+desviacion = 0
+for i in lista:
+    suma += i
+    if i == moda:
+        moda += 1
+    else:
+        moda = i 
+    if i > varianza:
+        varianza = i
+suma_cuadrados = 0
+for i in lista:
+    suma_cuadrados += (i - suma / len(lista)) ** 2
+varianza = suma_cuadrados / len(lista)
+desviacion = varianza ** 0.5
+
+print("La media es: ",suma/len(lista))
+print("La moda es: ",df["price"].mode())
+print("La varianza es: ",varianza)
+print("La desviacion es: ",desviacion)
+
+
+print("Lo mismo pero ahora con otras mas columnas")
+
+# Lista de columnas 
+columnas = ["price","bedrooms","bathrooms","sqft_living","sqft_lot",
+            "floors","waterfront","view","condition","grade",
+            "sqft_above","sqft_basement","yr_built"]
+
+print("Ahora con funciones ")
+
+def calcular_media(lista):
+    return sum(lista) / len(lista)
+
+def calcular_moda(lista):
+    frecuencias = {}
+    for valor in lista:
+        frecuencias[valor] = frecuencias.get(valor, 0) + 1
+    max_frec = max(frecuencias.values())
+    modas = [k for k,v in frecuencias.items() if v == max_frec]
+    return modas
+
+def calcular_varianza(lista):
+    media = calcular_media(lista)
+    suma_cuadrados = sum((x - media) ** 2 for x in lista)
+    return suma_cuadrados / len(lista)
+
+def calcular_desviacion(lista):
+    return math.sqrt(calcular_varianza(lista))
+
+for col in columnas:
+    lista = list(df[col])
+    media = calcular_media(lista)
+    moda = calcular_moda(lista)
+    varianza = calcular_varianza(lista)
+    desviacion = calcular_desviacion(lista)
+
+    print(f"Columna: {col}")
+    print("  Media:", media)
+    print("  Moda:", moda)
+    print("  Varianza:", varianza)
+    print("  Desviación estándar:", desviacion)
+    print("-"*40)`
+},
+
+matrices:{
+title:'Matrices',
+description:'Multiplicación de matrices utilizando ciclos anidados.',
+preview:'Operaciones matemáticas matriciales en Python.',
+code:`A = [[5, 6, 1], 
+    [3, 10, 1], 
+    [2, 11, 3]]
+
+B = [[1, 2, 17],
+    [6, 5, 15],
+    [3, 11, 12]]
+
+C = [[0 for _ in range(len(B[0]))] for _ in range(len(A))]
+
+for i in range(len(A)):            
+    for j in range(len(B[0])):       
+        for k in range(len(B)):      
+            C[i][j] += A[i][k] * B[k][j]
+
+for lista in C:
+    print(lista)`
+},
+
+asientos:{
+title:'Matrices',
+description:'Matrices.',
+preview:'.',
+code:`A = [[5, 6, 1], 
+    [3, 10, 1], 
+    [2, 11, 3]]
+
+B = [[1, 2, 17],
+    [6, 5, 15],
+    [3, 11, 12]]
+
+C = [[0 for _ in range(len(B[0]))] for _ in range(len(A))]
+
+for i in range(len(A)):            
+    for j in range(len(B[0])):       
+        for k in range(len(B)):      
+            C[i][j] += A[i][k] * B[k][j]
+
+for lista in C:
+    print(lista)`
+},
+
+asientos:{
+title:'Matriz Asientos',
+description:'Simulación de reservación de asientos en una sala utilizando matrices.',
+preview:'Reservar, liberar y consultar lugares dentro de una sala.',
+code:`Asientos = [
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0]
+]
+
+def reservar(i, j):
+    fila = i - 1
+    columna = j - 1
+    if Asientos[fila][columna] == 1:
+        print(f"RECHAZO: ocupado ({i},{j})")
+    else:
+        Asientos[fila][columna] = 1
+        print(f"OK: reservado ({i},{j})")
+
+def liberar(i, j):
+    fila = i - 1
+    columna = j - 1
+    if Asientos[fila][columna] == 0:
+        print(f"RECHAZO: ya libre ({i},{j})")
+    else:
+        Asientos[fila][columna] = 0
+        print(f"OK: liberado ({i},{j})")
+
+def consultar(i, j):
+    fila = i - 1
+    columna = j - 1
+    if Asientos[fila][columna] == 0:
+        print(f"Estado = libre ({i},{j})")
+    else:
+        print(f"Estado = reservado ({i},{j})")   
+
+reservar(1, 1)
+reservar(1, 2)
+reservar(1, 1)
+consultar(1, 1)
+liberar(1, 1)
+liberar(1, 1)
+reservar(3, 4)
+reservar(6, 6)
+consultar(6, 6)
+reservar(2, 5)
+
+total_reservados = 0
+fila_max = 0
+max_reservados = 0
+
+for i in range(len(Asientos[0])):
+    reservados_fila = 0
+    for j in range(len(Asientos[0])):
+        if Asientos[i][j] == 1:
+            total_reservados += 1
+            reservados_fila += 1
+    if reservados_fila > max_reservados:
+        max_reservados = reservados_fila
+        fila_max = i + 1
+
+print(f"Total reservados = {total_reservados}")
+print(f"Fila con más reservados = {fila_max}")`
+},
+
+bicolas:{
+title:'Bicolas',
+description:'Implementación de una bicola para manejar operaciones bancarias de retiros y depósitos.',
+preview:'Inserción y eliminación de elementos por ambos extremos.',
+code:`# ── Operaciones de bicola con lista ───────────────────────────────
+def enqueue_rear(bicola: list, elemento):
+    bicola.append(elemento)
+
+def enqueue_front(bicola: list, elemento):
+    bicola.insert(0, elemento)
+
+def peek_front(bicola: list):
+    return bicola[0]
+
+def peek_rear(bicola: list):
+    return bicola[-1]
+
+def is_empty(bicola: list) -> bool:
+    return bicola == []
+
+def size(bicola: list) -> int:
+    return len(bicola)
+
+# ── Operaciones bancarias ──────────────────────────────────────────
+def retiros(saldos: list, montos: list) -> None:
+    saldo = peek_front(saldos)
+    monto = peek_front(montos)      # lee el primer monto
+    enqueue_rear(saldos, saldo - monto)
+    saldos.pop(0)
+    montos.pop(0)                   # elimina el monto usado, avanza al siguiente
+
+def depositos(saldos: list, montos: list) -> None:
+    saldo = peek_front(saldos)
+    monto = peek_front(montos)
+    enqueue_rear(saldos, saldo + monto)
+    saldos.pop(0)
+    montos.pop(0)
+
+# ── Datos ──────────────────────────────────────────────────────────
+saldos   = [1000, 1000, 1000, 1000, 1000]
+retiro   = [500, 400, 300, 200, 100]   # ← 5 valores distintos
+deposito = [300, 300, 300, 300, 300]   # ← 5 valores iguales
+
+print("Saldos iniciales:", saldos)
+
+for _ in range(5):
+    retiros(saldos, retiro)
+
+print("Tras 5 retiros:  ", saldos)
+
+for _ in range(5):
+    depositos(saldos, deposito)
+
+print("Tras 5 depósitos:", saldos)`
+},
+
+colasCirculares:{
+title:'Colas Circulares',
+description:'Estructura de datos circular que reutiliza espacios vacíos automáticamente.',
+preview:'Gestión dinámica de turnos mediante una cola circular.',
+code:`class ColaCircular:
+    def __init__(self, capacidad):
+        self.capacidad = capacidad
+        self.cola = [None] * capacidad
+        self.frente = -1
+        self.final = -1
+
+    def esta_vacia(self):
+        return self.frente == -1
+
+    def esta_llena(self):
+        return (self.final + 1) % self.capacidad == self.frente
+
+    def encolar(self, turno):
+        if self.esta_llena():
+            print("La cola esta llena")
+            return
+
+        if self.esta_vacia():
+            self.frente = 0
+            self.final = 0
+        else:
+            self.final = (self.final + 1) % self.capacidad
+
+        self.cola[self.final] = turno
+
+    def desencolar(self):
+        if self.esta_vacia():
+            print("La cola esta vacia")
+            return None
+
+        turno = self.cola[self.frente]
+        self.cola[self.frente] = None
+
+        if self.frente == self.final:
+            self.frente = -1
+            self.final = -1
+        else:
+            self.frente = (self.frente + 1) % self.capacidad
+
+        return turno
+
+    def ver_frente(self):
+        if self.esta_vacia():
+            print("La cola esta vacia")
+            return None
+        return self.cola[self.frente]
+
+    def mostrar(self):
+        if self.esta_vacia():
+            print("La cola esta vacia")
+            return
+
+        i = self.frente
+        elementos = []
+
+        while True:
+            elementos.append(self.cola[i])
+            if i == self.final:
+                break
+            i = (i + 1) % self.capacidad
+
+        print("Cola:", elementos)
+
+    def estado(self):
+        print("Arreglo:", self.cola)
+        print("Frente:", self.frente, "Final:", self.final)
+        if self.esta_llena():
+            print("La cola está llena. No se puede encolar.")
+            return
+        
+        if self.esta_vacia():
+            self.frente = 0
+            self.final = 0
+        else:
+            self.final = (self.final + 1) % self.capacidad
+
+    def desencolar(self):
+        if self.esta_vacia():
+            print("La cola está vacía. No se puede desencolar.")
+            return None
+        
+        elemento = self.cola[self.frente]
+        self.cola[self.frente] = None  # Limpiar el espacio
+
+        if self.frente == self.final:  # Solo había un elemento
+            self.frente = -1
+            self.final = -1
+        else:
+            self.frente = (self.frente + 1) % self.capacidad
+
+        return elemento
+    
+    def ver_frente(self):
+        if self.esta_vacia():
+            print("La cola está vacía.")
+            return None
+        return self.cola[self.frente]
+    
+    def mostrar(self):
+        if self.esta_vacia():
+            print("La cola está vacía.")
+            return
+        
+        elementos = []
+        i = self.frente
+        while True:
+            elementos.append(self.cola[i])
+            if i == self.final:
+                break
+            i = (i + 1) % self.capacidad
+        
+        print("Cola:", elementos)
+
+#// Prueba de la ColaCircular
+
+cola = ColaCircular(5)
+
+# Insertar turnos
+cola.encolar("T1")
+cola.encolar("T2")
+cola.encolar("T3")
+cola.encolar("T4")
+cola.encolar("T5")
+
+cola.mostrar()
+cola.estado()
+
+# Atender turnos
+print("Atendiendo:", cola.desencolar())
+print("Atendiendo:", cola.desencolar())
+
+cola.mostrar()
+cola.estado()
+
+# Insertar 
+cola.encolar("T6")
+cola.encolar("T7")
+
+cola.mostrar()
+cola.estado()
+
+# Ver frente
+print("Turno al frente:", cola.ver_frente())`
+},
+
+colas:{
+title:'Colas',
+description:'Implementación básica de una cola utilizando listas en Python.',
+preview:'Operaciones FIFO: enqueue, dequeue y peek.',
+code:`def enque(lista, elemento):
+    lista.append(elemento)
+
+def deque(lista):
+    lista.pop(0)
+
+def peek(lista):
+    return lista[0]
+
+def is_empty(lista):
+    if lista == []:
+        return True
+    else:
+        return False
+    
+def size(lista):
+    return len(lista)
+
+lista = []
+
+print(is_empty(lista))
+enque(lista, 1)
+print(lista)
+print(is_empty(lista))
+deque(lista)
+print(is_empty(lista))
+enque(lista, 8)
+enque(lista, 7)
+print(peek(lista))
+print(size(lista))  `
+},
+
+deque:{
+title:'Deque',
+description:'Uso de la estructura deque de Python para optimizar operaciones en colas.',
+preview:'Procesamiento eficiente de depósitos y retiros bancarios.',
+code:`from collections import deque
+
+def enqueue(q: deque, elemento) -> None:
+    q.append(elemento)
+
+def dequeue(q: deque):
+    return q.popleft()
+
+def peek(q: deque):
+    return q[0]
+
+def is_empty(q: deque) -> bool:
+    return not q
+
+def size(q: deque) -> int:
+    return len(q)
+
+def aplicar_retiro(saldos: deque[int], monto: int, historial: deque[int] | None = None) -> None:
+    
+    saldo_original = dequeue(saldos)
+    if historial is not None:
+        enqueue(historial, saldo_original)
+
+    nuevo_saldo = saldo_original - monto
+    enqueue(saldos, nuevo_saldo)
+
+def aplicar_deposito(saldos: deque[int], monto: int, historial: deque[int] | None = None) -> None:
+    
+    saldo_original = dequeue(saldos)
+    if historial is not None:
+        enqueue(historial, saldo_original)
+
+    nuevo_saldo = saldo_original + monto
+    enqueue(saldos, nuevo_saldo)
+
+saldos = deque()
+historial_saldos = deque()
+historial_deposito = deque()
+
+print(is_empty(saldos))
+
+for _ in range(5):
+    enqueue(saldos, 1000)
+
+monto_retiro = 500
+monto_deposito = 300
+
+for _ in range(5):
+    aplicar_retiro(saldos, monto_retiro, historial_saldos)
+
+
+for _ in range(5):
+    aplicar_deposito(saldos, monto_deposito, historial_deposito)
+
+
+
+print("Historial (saldos antes del retiro):", list(historial_saldos))
+print("Saldos finales:", list(saldos))
+print("Historial saldos antes del depósito:", list(historial_deposito))
+print("Saldos tras depositos:", list(saldos))`
+},
+
+ejercicioColas:{
+title:'Ejercicio Colas',
+description:'Aplicación práctica de colas para procesar operaciones financieras.',
+preview:'Actualización de saldos usando estructuras FIFO.',
+code:`def enque(lista, elemento):
+    lista.append(elemento)
+
+def deque(lista, lista2):
+    enque(lista2, lista[0])
+    lista.pop(0)
+
+def retiros(lista, lista2):
+    r = lista[0] - lista2[0]
+    deque(lista, lista2)
+    enque(lista, r)
+
+def depositos(lista, lista2):
+    r = lista[0] + lista2[0]
+    deque(lista, lista2)
+    enque(lista, r)
+
+def peek(lista):
+    return lista[0]
+
+def is_empty(lista):
+    return lista == []
+
+def size(lista):
+    return len(lista)
+
+saldos   = [1000, 1000, 1000, 1000, 1000]
+retiro   = [500]
+deposito = [300]
+
+print(saldos)
+retiros(saldos, retiro)
+retiros(saldos, retiro)
+retiros(saldos, retiro)
+retiros(saldos, retiro)
+retiros(saldos, retiro)
+print(saldos)
+depositos(saldos, deposito)
+depositos(saldos, deposito)
+depositos(saldos, deposito)
+depositos(saldos, deposito)
+depositos(saldos, deposito)
+print(saldos)`
+},
+
+simulacion:{
+title:'Simulación Datos',
+description:'Simulación de tareas y procesamiento de datos mediante colas.',
+preview:'Administración de procesos utilizando estructuras dinámicas.',
+code:`from collections import deque
+tareas = [
+    ["T1", 1, 0],
+    ["T2", 0, 0],
+    ["T3", 2, 0],
+    ["T4", 1, 0],
+    ["T5", 2, 2],
+    ["T6", 2, 1]
+]
+
+cola = deque(tareas)`
+},
+
+colaCircular:{
+title:'Cola Circular',
+description:'Sistema circular para administrar turnos y reutilizar posiciones disponibles.',
+preview:'Inserción y atención de elementos en forma cíclica.',
+code:`class ColaCircular:
+    def __init__(self, capacidad):
+        self.capacidad = capacidad
+        self.cola = [None] * capacidad
+        self.frente = -1
+        self.final = -1
+
+    def esta_vacia(self):
+        return self.frente == -1
+
+    def esta_llena(self):
+        return (self.final + 1) % self.capacidad == self.frente
+
+    def encolar(self, turno):
+        if self.esta_llena():
+            print("La cola esta llena")
+            return
+
+        if self.esta_vacia():
+            self.frente = 0
+            self.final = 0
+        else:
+            self.final = (self.final + 1) % self.capacidad
+
+        self.cola[self.final] = turno
+
+    def desencolar(self):
+        if self.esta_vacia():
+            print("La cola esta vacia")
+            return None
+
+        turno = self.cola[self.frente]
+        self.cola[self.frente] = None
+
+        if self.frente == self.final:
+            self.frente = -1
+            self.final = -1
+        else:
+            self.frente = (self.frente + 1) % self.capacidad
+
+        return turno
+
+    def ver_frente(self):
+        if self.esta_vacia():
+            print("La cola esta vacia")
+            return None
+        return self.cola[self.frente]
+
+    def mostrar(self):
+        if self.esta_vacia():
+            print("La cola esta vacia")
+            return
+
+        i = self.frente
+        elementos = []
+
+        while True:
+            elementos.append(self.cola[i])
+            if i == self.final:
+                break
+            i = (i + 1) % self.capacidad
+
+        print("Cola:", elementos)
+
+    def estado(self):
+        print("Arreglo:", self.cola)
+        print("Frente:", self.frente, "Final:", self.final)
+        if self.esta_llena():
+            print("La cola está llena. No se puede encolar.")
+            return
+        
+        if self.esta_vacia():
+            self.frente = 0
+            self.final = 0
+        else:
+            self.final = (self.final + 1) % self.capacidad
+
+    def desencolar(self):
+        if self.esta_vacia():
+            print("La cola está vacía. No se puede desencolar.")
+            return None
+        
+        elemento = self.cola[self.frente]
+        self.cola[self.frente] = None  # Limpiar el espacio
+
+        if self.frente == self.final: 
+            self.frente = -1
+            self.final = -1
+        else:
+            self.frente = (self.frente + 1) % self.capacidad
+
+        return elemento
+    
+    def ver_frente(self):
+        if self.esta_vacia():
+            print("La cola está vacía.")
+            return None
+        return self.cola[self.frente]
+    
+    def mostrar(self):
+        if self.esta_vacia():
+            print("La cola está vacía.")
+            return
+        
+        elementos = []
+        i = self.frente
+        while True:
+            elementos.append(self.cola[i])
+            if i == self.final:
+                break
+            i = (i + 1) % self.capacidad
+        
+        print("Cola:", elementos)
+
+
+cola = ColaCircular(5)
+
+cola.encolar("T1")
+cola.encolar("T2")
+cola.encolar("T3")
+cola.encolar("T4")
+cola.encolar("T5")
+
+cola.mostrar()
+cola.estado()
+
+print("Atendiendo:", cola.desencolar())
+print("Atendiendo:", cola.desencolar())
+
+cola.mostrar()
+cola.estado()
+
+cola.encolar("T6")
+cola.encolar("T7")
+
+cola.mostrar()
+cola.estado()
+
+print("Turno al frente:", cola.ver_frente())`
+},
+
+pila:{
+title:'Pila',
+description:'Implementación de una pila utilizando listas y operaciones LIFO.',
+preview:'Inserción y extracción de elementos desde la cima.',
+code:`class Pila:
+    def __init__(self):
+        self.items = []
+
+    def push(self, elemento):
+        self.items.append(elemento)
+
+    def pop(self):
+        return self.items.pop()
+
+    def peek(self):
+        return self.items[-1]
+
+    def isEmpty(self):
+        return len(self.items) == 0
+
+    def size(self):
+        return len(self.items)
+
+
+dulces = [11890.0, 12500.5, 13010.35, 13650.8, 13999.0, 
+          14100.0, 14780.4, 14999.99, 15120.0, 15550.75, 
+          15800.0, 16250.25]
+
+pila = Pila()
+
+for d in dulces:
+    pila.push(d)
+
+print("Pila completa:", pila.items)
+print("Elemento en la cima (top):", pila.peek())
+print("Tamaño:", pila.size())`
+},
+
+arboles:{
+title:'Árboles',
+description:'Construcción de árboles binarios para ordenar y organizar datos jerárquicamente.',
+preview:'Inserción automática y recorrido ordenado de nodos.',
+code:`import json
+
+class NodoArbol:
+    def __init__(self, clave, valor, izquierdo=None, derecho=None, padre=None):
+        self.clave = clave
+        self.cargaUtil = valor
+        self.hijoIzquierdo = izquierdo
+        self.hijoDerecho = derecho
+        self.padre = padre
+
+    def tieneHijoIzquierdo(self):
+        return self.hijoIzquierdo
+
+    def tieneHijoDerecho(self):
+        return self.hijoDerecho
+
+    def esHijoIzquierdo(self):
+        return self.padre and self.padre.hijoIzquierdo == self
+
+    def esHijoDerecho(self):
+        return self.padre and self.padre.hijoDerecho == self
+
+    def esRaiz(self):
+        return not self.padre
+
+    def esHoja(self):
+        return not (self.hijoDerecho or self.hijoIzquierdo)
+
+    def tieneAlgunHijo(self):
+        return self.hijoDerecho or self.hijoIzquierdo
+
+    def tieneAmbosHijos(self):
+        return self.hijoDerecho and self.hijoIzquierdo
+
+    def reemplazarDatoDeNodo(self, clave, valor, hizq, hder):
+        self.clave = clave
+        self.cargaUtil = valor
+        self.hijoIzquierdo = hizq
+        self.hijoDerecho = hder
+        if self.tieneHijoIzquierdo():
+            self.hijoIzquierdo.padre = self
+        if self.tieneHijoDerecho():
+            self.hijoDerecho.padre = self
+
+def insertar_paso_a_paso(nodo_actual, nueva_clave):
+    if nueva_clave < nodo_actual.clave:
+        if nodo_actual.tieneHijoIzquierdo():
+            insertar_paso_a_paso(nodo_actual.hijoIzquierdo, nueva_clave)
+        else:
+            nodo_actual.hijoIzquierdo = NodoArbol(nueva_clave, f"Valor {nueva_clave}", padre=nodo_actual)
+    
+    elif nueva_clave > nodo_actual.clave:
+        if nodo_actual.tieneHijoDerecho():
+            insertar_paso_a_paso(nodo_actual.hijoDerecho, nueva_clave)
+        else:
+            nodo_actual.hijoDerecho = NodoArbol(nueva_clave, f"Valor {nueva_clave}", padre=nodo_actual)
+    
+
+def generar_diccionario(nodo):
+    if not nodo: return None
+    return {
+        "clave": nodo.clave,
+        "izq": generar_diccionario(nodo.hijoIzquierdo),
+        "der": generar_diccionario(nodo.hijoDerecho)
+    }
+
+def obtener_ordenado(nodo, lista):
+    if nodo:
+        obtener_ordenado(nodo.hijoIzquierdo, lista)
+        lista.append(nodo.clave)
+        obtener_ordenado(nodo.hijoDerecho, lista)
+
+lista_entrada = [1, 13, 11, 5, 9, 10, 1, 12, 3, 6]
+raiz = NodoArbol(lista_entrada[0], f"Valor {lista_entrada[0]}") 
+
+for elemento in lista_entrada[1:]: 
+    insertar_paso_a_paso(raiz, elemento)
+
+print(f"Lista Original: {lista_entrada}")
+print("\nDiccionario del Árbol :")
+print(json.dumps(generar_diccionario(raiz), indent=4))
+
+lista_final = []
+obtener_ordenado(raiz, lista_final)
+print(f"\nLista Final, Ordenada y sin repetidos: {lista_final}")`
+},
+
+arbolBinario:{
+title:'Árboles Binarios',
+description:'Creación y recorrido de árboles binarios mediante métodos recursivos.',
+preview:'Recorridos preorden, inorden y postorden.',
+code:`class ArbolB:
+    class Nodo:
+        def __init__(self, valor):
+            self.valor = valor
+            self.izquierdo = None
+            self.derecho = None
+
+    def __init__(self):
+        self.raiz = None
+
+    def agregar(self, dato):
+        if self.raiz is None:
+            self.raiz = self.Nodo(dato)
+        else:
+            self.__agregar_recursivo(self.raiz, dato)
+
+    def __agregar_recursivo(self, nodo, dato):
+        if dato < nodo.valor:
+            if nodo.izquierdo is None:
+                nodo.izquierdo = self.Nodo(dato)
+            else:
+                self.__agregar_recursivo(nodo.izquierdo, dato)
+        elif dato > nodo.valor:
+            if nodo.derecho is None:
+                nodo.derecho = self.Nodo(dato)
+            else:
+                self.__agregar_recursivo(nodo.derecho, dato)
+
+    def preorden(self, nodo):
+        if nodo is None:
+            return
+        print(nodo.valor, end=" ")
+        if nodo.izquierdo is None and nodo.derecho is not None:
+            print("None", end=" ")
+        if nodo.derecho is None and nodo.izquierdo is not None:
+            print("None", end=" ")
+        self.preorden(nodo.izquierdo)
+        self.preorden(nodo.derecho)
+
+    def inorden(self, nodo):
+        if nodo is None:
+            return
+        if nodo.izquierdo is None and nodo.derecho is not None:
+            print("None", end=" ")
+        self.inorden(nodo.izquierdo)
+        print(nodo.valor, end=" ")
+        self.inorden(nodo.derecho)
+        if nodo.derecho is None and nodo.izquierdo is not None:
+            print("None", end=" ")
+
+    def postorden(self, nodo):
+        if nodo is None:
+            return
+        if nodo.izquierdo is None and nodo.derecho is not None:
+            print("None", end=" ")
+        self.postorden(nodo.izquierdo)
+        self.postorden(nodo.derecho)
+        if nodo.derecho is None and nodo.izquierdo is not None:
+            print("None", end=" ")
+        print(nodo.valor, end=" ")
+
+# --- EJEMPLO ---
+arbol = ArbolB()
+datos = [3, 1, 4, 2, 5]
+for d in datos:
+    arbol.agregar(d)
+
+print("Preorden: ", end=" ")
+arbol.preorden(arbol.raiz)
+print("\nInorden:  ", end=" ")
+arbol.inorden(arbol.raiz)
+print("\nPostorden:", end=" ")
+arbol.postorden(arbol.raiz)
+print()`
+},
+
+raiz:{
+title:'Raíz',
+description:'Uso combinado de pilas y colas para ordenar elementos numéricos.',
+preview:'Procesamiento y organización de datos mediante estructuras dinámicas.',
+code:`dulces = [12500.5, 11890.0, 13010.35, 14100.0, 13650.8, 14999.99, 15800.0, 16250.25, 15120.0, 14780.4, 13999.0, 15550.75]
+
+
+
+class Cola:
+    def __init__(self):
+        self.datos = []
+
+    def enqueue(self, dato):
+        self.datos.append(dato)
+
+    def dequeue(self):
+        if not self.is_empty():
+            return self.datos.pop(0)
+
+    def is_empty(self):
+        return len(self.datos) == 0
+
+class Pila:
+    def __init__(self):
+        self.datos = []
+
+    def push(self, dato):
+        self.datos.append(dato)
+
+    def pop(self):
+        return self.datos.pop()
+
+    def peek(self):
+        return self.datos[-1] if not self.is_empty() else None
+
+    def is_empty(self):
+        return len(self.datos) == 0
+
+
+
+def ordenados(lista):
+    cola = Cola()
+    pila = Pila()
+
+    for i in lista:
+        cola.enqueue(i)
+
+    while not cola.is_empty():
+        candidato = cola.dequeue()
+        es_menor = True
+
+        for j in range(len(cola.datos)):
+            candidato2 = cola.dequeue()
+
+            if candidato > candidato2:
+                es_menor = False
+
+            cola.enqueue(candidato2)
+
+        if es_menor:
+            pila.push(candidato)
+        else:
+            cola.enqueue(candidato)
+
+    return pila
+
+
+# Ejecutar
+pila_ordenada = ordenados(dulces)
+
+print("Pila ordenada:")
+while not pila_ordenada.is_empty():
+    print(pila_ordenada.pop())`
+},
+
+grafo:{
+title:'Grafo',
+description:'Implementación del recorrido BFS utilizando estructuras de cola.',
+preview:'Exploración de nodos y conexiones dentro de un grafo.',
+code:`grafo = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F', 'G'],
+    'D': [],
+    'E': [],
+    'F': [],
+    'G': []
+}
+
+class Cola:
+    def __init__(self):
+        self.elementos = []
+
+    def enqueue(self, valor):
+        self.elementos.append(valor)
+
+    def dequeue(self):
+        return self.elementos.pop(0)
+
+    def esta_vacia(self):
+        return len(self.elementos) == 0
+
+    def __repr__(self):
+        return str(self.elementos)
+
+
+def bfs(grafo):
+    visitados = []
+    cola = Cola()
+
+    print(f"Cola inicial:     {cola}")
+    print(f"Visitados inicial: {visitados}\n")
+
+    for inicio in grafo:
+        if inicio not in visitados:
+            visitados.append(inicio)
+            cola.enqueue(inicio)
+
+            print(f"Enqueue '{inicio}':")
+            print(f"Cola:      {cola}")
+            print(f"Visitados: {visitados}\n")
+
+            while not cola.esta_vacia():
+                nodo = cola.dequeue()
+                print(f"Visitando: {nodo}")
+
+                for vecino in grafo[nodo]:
+                    if vecino not in visitados:
+                        visitados.append(vecino)
+                        cola.enqueue(vecino)
+
+                print(f"Cola:      {cola}")
+                print(f"Visitados: {visitados}\n")
+
+    print(f"Recorrido final BFS: {visitados}")
+
+bfs(grafo)`
+},
+
+grafo2:{
+title:'Grafo 2',
+description:'Implementación del algoritmo de Dijkstra para encontrar rutas mínimas.',
+preview:'Cálculo de caminos más cortos entre nodos.',
+code:`# implementacion de un algoritmo que se llama Dijkstra
+# Implementacion de la generacion de una tabla 
+
+import heapq
+
+def dijkstra(grafo, inicio):
+    distancias = {nodo: float('inf') for nodo in grafo}
+    distancias[inicio] = 0
+    previos = {nodo: None for nodo in grafo}
+    
+    cola_prioridad = [(0, inicio)]
+    
+    while cola_prioridad:
+        distancia_actual, nodo_actual = heapq.heappop(cola_prioridad)
+        
+        if distancia_actual > distancias[nodo_actual]:
+            continue
+            
+        for vecino, peso in grafo[nodo_actual].items():
+            distancia = distancia_actual + peso
+            
+            if distancia < distancias[vecino]:
+                distancias[vecino] = distancia
+                previos[vecino] = nodo_actual
+                heapq.heappush(cola_prioridad, (distancia, vecino))
+                
+    return distancias, previos
+
+
+grafo = {
+    0: {1: 9, 4: 6},
+    1: {0: 9, 3: 8},
+    2: {4: 5, 5: 6},
+    3: {1: 8, 5: 1, 7: 7},
+    4: {0: 6, 2: 5, 6: 3},
+    5: {2: 6, 3: 1},
+    6: {4: 3, 7: 2},
+    7: {3: 7, 6: 2}
+}
+
+distancias, previos = dijkstra(grafo, 0)
+
+print(f"{'Vertex':<8} | {'Cost':<6} | {'Path'}")
+print("-" * 25)
+for nodo in sorted(distancias.keys()):
+    camino = []
+    actual = nodo
+    while actual is not None:
+        camino.append(str(actual))
+        actual = previos[actual]
+    camino_str = " ".join(reversed(camino))
+    
+    print(f"{nodo:<8} | {distancias[nodo]:<6} | {camino_str}")`
+},
+
+prims:{
+title:'Prims',
+description:'Aplicación del algoritmo de Prim para construir árboles de expansión mínima.',
+preview:'Optimización de conexiones en grafos ponderados.',
+code:`import heapq
+
+def prim(graph, start):
+    visited = set()
+    min_heap = [(0, start, None)]  # (peso, nodo, padre)
+    mst = []
+
+    while min_heap:
+        weight, node, parent = heapq.heappop(min_heap)
+
+        if node in visited:
+            continue
+
+        visited.add(node)
+
+        if parent is not None:
+            mst.append((parent, node, weight))
+
+        for neighbor, edge_weight in graph[node]:
+            if neighbor not in visited:
+                heapq.heappush(min_heap, (edge_weight, neighbor, node))
+
+    return mst
+
+
+
+graph = {
+    2: [(0, 20), (3, 20), (4, 33)],
+    0: [(2, 20), (1, 10)],
+    1: [(0, 10), (3, 50), (4, 10)],
+    3: [(2, 20), (1, 50), (4, 20), (5, 2)],
+    4: [(2, 33), (1, 10), (3, 20), (5, 1)],
+    5: [(4, 1), (3, 2)]
+}
+
+resultado = prim(graph, 2)
+
+print(resultado)`
+},
+
+hanoi:{
+title:'Torres de Hanoi',
+description:'Resolución recursiva del problema clásico de Torres de Hanoi.',
+preview:'Movimiento automático de discos entre torres.',
+code:`def hanoi(n, origen, destino, auxiliar):
+    if n > 0:
+        hanoi(n - 1, origen, auxiliar, destino)
+        
+        print(f"Disco {n} de {origen} a {destino}\n")
+        
+        hanoi(n - 1, auxiliar, destino, origen)
+
+numero_de_discos = 5
+hanoi(numero_de_discos, 'A', 'C', 'B')`
+},
+
+sort:{
+title:'Sort',
+description:'Uso de funciones de ordenamiento para organizar listas y estructuras de datos.',
+preview:'Clasificación automática de datos mediante sort().',
+code:`# Lista original
+lista_original = [10, 50, 23, 3, 43, 23, 29, 49, 12, 40]
+
+
+# BUBBLE SORT
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        swapped = False
+        for j in range(n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+    return arr
+
+
+# SELECTION SORT       
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        min_index = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    return arr
+
+
+# INSERTION SORT
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i] 
+        j = i - 1
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key  
+    return arr
+
+
+# MERGE SORT
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left = arr[:mid]
+        right = arr[mid:]
+
+        merge_sort(left)
+        merge_sort(right)
+
+        i = j = k = 0
+
+        while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+                arr[k] = left[i]
+                i += 1
+            else:
+                arr[k] = right[j]
+                j += 1
+            k += 1
+
+        while i < len(left):
+            arr[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            arr[k] = right[j]
+            j += 1
+            k += 1
+
+    return arr
+
+
+# QUICK SORT
+def partition(arr, low, high):
+    pivot = arr[high]
+    i = low - 1
+    for j in range(low, high):
+        if arr[j] < pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
+
+
+def quick_sort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+        quick_sort(arr, low, pi - 1)
+        quick_sort(arr, pi + 1, high)
+    return arr
+
+
+import random
+
+# QUICK SORT RANDOM
+def partition_random(arr, low, high):
+    random_index = random.randint(low, high)
+    arr[random_index], arr[high] = arr[high], arr[random_index]
+    pivot = arr[high]
+    i = low - 1
+    
+    for j in range(low, high):
+        if arr[j] < pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
+
+
+def quick_sort_random(arr, low, high):
+    if low < high:
+        pi = partition_random(arr, low, high)
+        quick_sort_random(arr, low, pi - 1)
+        quick_sort_random(arr, pi + 1, high)
+    return arr
+
+# COUNTING SORT
+def counting_sort(arr):
+    if len(arr) == 0:
+        return arr
+
+    max_val = max(arr)
+    count = [0] * (max_val + 1)
+    for num in arr:
+        count[num] += 1
+    sorted_arr = []
+    for i in range(len(count)):
+        sorted_arr.extend([i] * count[i])
+
+    return sorted_arr
+
+
+
+# =========================
+# EJECUCIÓN 
+# =========================
+
+#  BUBBLE SORT
+listaN = lista_original.copy()                                                                                                                                                                                                                                                                                                      
+print("Bubble Sort:", bubble_sort(listaN))
+print()
+
+# SELECTION SORT
+listaN = lista_original.copy()
+print("Selection Sort:", selection_sort(listaN))
+print()
+
+# INSERTION SORT
+listaN = lista_original.copy()
+print("Insertion Sort:", insertion_sort(listaN))
+print()
+
+# MERGE SORT
+listaN = lista_original.copy()
+print("Merge Sort:", merge_sort(listaN))
+print()
+
+# QUICK SORT
+listaN = lista_original.copy()
+print("Quick Sort:", quick_sort(listaN, 0, len(listaN) - 1))
+print()
+
+# QUICK SORT RANDOM
+listaN = lista_original.copy()
+print("Quick Sort Random:", quick_sort_random(listaN, 0, len(listaN) - 1))
+print()
+
+# COUNTING SORT
+listaN = lista_original.copy()
+print("Counting Sort:", counting_sort(listaN))`
+},
+
+}
+
+function showExercise(id){
+
+    const ex = exercises[id]
+
+    document.getElementById('content').innerHTML = `
+
+        <div class="hero">
+
+            <h1>${ex.title}</h1>
+
+            <p>
+                Visualización del ejercicio
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="tag">
+                Ejercicio
+            </div>
+
+            <h2>
+                ${ex.title}
+            </h2>
+
+            <p>
+                ${ex.description}
+            </p>
+
+            <div class="preview">
+
+                <h3>
+                    Vista previa
+                </h3>
+
+                <br>
+
+                <p>
+                    ${ex.preview}
+                </p>
+
+            </div>
+
+            <h3>
+                Código Python
+            </h3>
+
+            <br>
+
+            <div class="code-box">
+
+                <pre>${ex.code}</pre>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+
+            Proyecto Final - Estructura de Datos
+
+        </div>
+    `
+}
+
+</script>
+
+</body>
+</html>
